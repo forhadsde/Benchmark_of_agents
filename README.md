@@ -118,7 +118,32 @@ breakdown by defence is in `Tables/Contamination_by_category.xlsx`.
 
 ## How the review was done
 
-The notebooks follow the steps in the order they were done. Each notebook shows its code, the scripts it runs and their saved
+The review had two parts. The larger part, and most of the time, was reading the papers and making the judgements by hand. The
+scripts in the notebooks did the searching, counting and drawing, and they work only from the decisions and answers I recorded.
+
+### Reading, coding and writing
+
+1. **Scope and rules.** I set the five research questions, the eligibility criteria with their inclusion and exclusion codes, and the
+   boundary rules for domain benchmarks, language model benchmarks without an agent, and data science benchmarks (Sections 4.1 and
+   4.7 and Appendix C of the report).
+2. **Full text reading.** I assessed 1,454 reports in full text and included 1,010. A paper was included only when its full text could
+   be read. A blind recheck of 40 records agreed on 37 (92.5 percent, Cohen's kappa 0.83).
+3. **Answers to the five questions for every paper.** I read each included paper and recorded a detailed answer to each of the five
+   questions, backed by a verbatim quote and the section it comes from. These answers are in `Included_papers_review.xlsx`.
+4. **Coding every benchmark.** From the papers I identified 891 unique benchmarks, merging versions and duplicates, and coded each one:
+   its role, granularity, task source, test source, validation, environment, contamination defences, reported limitations and a six
+   point quality appraisal. These codes are in `Appendix_tables.xlsx`.
+5. **The taxonomy.** I grouped the benchmarks by the task they test and built the taxonomy of 12 top level and 45 sub categories,
+   placing every benchmark in it.
+6. **Contamination and limitations.** I rechecked every contamination defence against a strict definition (overlap between test data
+   and training data), which reduced the benchmarks with a defence from 439 to 303. I coded the limitations the benchmark authors
+   report and read the 103 critical analyses of existing benchmarks.
+7. **Analysis and writing.** I interpreted the results and wrote the report, including the discussion, the research gaps and the threats
+   to validity.
+
+### The notebooks
+
+The notebooks hold the scripts, in the order the steps were done. Each notebook shows its code, the scripts it runs and their saved
 outputs, and GitHub displays them directly.
 
 | Step | Notebook | What it does |
@@ -127,7 +152,7 @@ outputs, and GitHub displays them directly.
 | 2 | `Notebooks/Step_2_Duplicates_and_tracker.ipynb` | Removal of duplicates and the master tracker |
 | 3 | `Notebooks/Step_3_Title_and_abstract_screening.ipynb` | Title and abstract screening against the eligibility criteria |
 | 4 | `Notebooks/Step_4_Snowballing.ipynb` | Backward snowballing from the screened papers, then rounds 2 to 5, each screened on title and abstract, until a round found no new included paper |
-| 5 | `Notebooks/Step_5_Analysis_tables_and_figures.ipynb` | Every table and figure, made last and only from the three Excel workbooks in this folder |
+| 5 | `Notebooks/Step_5_Analysis_tables_and_figures.ipynb` | Every table and figure, made last and only from the three Excel workbooks, which hold the results of the reading and coding above |
 
 `Notebooks/setup.py` holds the helpers that Steps 1 to 4 import. Rerunning Steps 1 to 4 needs the full project folder with the
 saved search exports, decisions and papers, which I can share on request. Step 5 needs only the three Excel workbooks in this
