@@ -127,7 +127,7 @@ scripts in the notebooks did the searching, counting and drawing, and they work 
    boundary rules for domain benchmarks, language model benchmarks without an agent, and data science benchmarks (Sections 4.1 and
    4.7 and Appendix C of the report).
 2. **Full text reading.** I assessed 1,454 reports in full text and included 1,010. A paper was included only when its full text could
-   be read. A blind recheck of 40 records agreed on 37 (92.5 percent, Cohen's kappa 0.83).
+   be read.
 3. **Answers to the five questions for every paper.** I read each included paper and recorded a detailed answer to each of the five
    questions, backed by a verbatim quote and the section it comes from. These answers are in `Included_papers_review.xlsx`.
 4. **Coding every benchmark.** From the papers I identified 891 unique benchmarks, merging versions and duplicates, and coded each one:
